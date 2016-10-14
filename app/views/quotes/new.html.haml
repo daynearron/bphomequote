@@ -5,15 +5,44 @@
 				Quick Quote
 			%h2.sub-header
 				Home Coverage
-			= form_for @quote do |f|
+			= form_for @contact do |f|
 				= f.label :name
-				= f.text_field :name, placeholder: 'Name', required: true
+				= f.text_field :name, placeholder: 'Name', required: true, class: "name"
+				
+				= f.label :dob
+				= f.text_field :dob, placeholder: 'Date of Birth', required: true, class: "dob"
+
+				= f.label :phone
+				= f.text_field :phone, placeholder: 'Phone', required: true
 
 				= f.label :email
 				= f.email_field :email, placeholder: 'Email', required: true
 
-				= f.label :message
-				= f.text_area :message, as: :text
+				= field_set_tag do
+					
+					=field_set_tag 'Property Address'
+
+					= f.label :address
+					= f.text_field :address, placeholder: 'Street Address', required: true
+
+					= f.label :city
+					= f.text_field :city, placeholder: 'City', required: true, class: 'address-small city'
+
+					= f.label :state
+					= f.text_field :state, placeholder: 'State', required: true, class: 'address-small state'
+
+					= f.label :zip
+					= f.text_field :zip, placeholder: 'Zip Code', required: true, class: 'address-small zip'
+
+					= f.label :property
+					= f.text_field :property, placeholder: 'Property Type', required: true
+
+				= field_set_tag do
+					
+					=field_set_tag 'Let Us Know!'
+
+					= f.label :message
+					= f.text_area :message, as: :text, placeholder: 'How did you hear about us?'
 
 				.hidden
 					= f.label :nickname

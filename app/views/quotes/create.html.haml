@@ -1,3 +1,30 @@
-%h1.page_title
-	Create
+.wrapper.thank-you
+	.form-wrapper
+		.form	
+			%h1.header
+				Thank You!
+			%h2.sub-header
+				We are reviewing your information and will get back to you soon!
+		.cta
+			=link_to "Learn More", "http://balboapacific.com"
+			about Balboa Pacific Insurance.
 
+.footer
+	=link_to "Balboa Pacific", "http://balboapacific.com", id: 'logo'
+	%ul.licensing
+		%li
+			Licensing: 
+		%li
+			AZ - 1089975 
+		%li
+			CA - 10I96581 
+		%li
+			CO - 460681 
+		%li
+			FL - W216194 
+		%li
+			OR - 100265964 
+		%li
+			TX - 2020888
+	=link_to "450 Newport Center Drive Suite 200 Newport Beach, CA 92660", "https://goo.gl/maps/5z9nAgy5ZHJ2", class: "address"
+	=link_to "(888) 722-6411", "tel:888.722.6411", class: "phone"

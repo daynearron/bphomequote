@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
 	end
 
 	def create
-		@qute = Quote.new(params[:quote])
+		@quote = Quote.new(params[:quote])
 		@quote.request = request
 		if @quote.deliver
 			flash.now[:error] = nil
