@@ -1,0 +1,5 @@
+$balboa-blue: rgba(12,44,55,0.9);
+
+.transition {
+	@include transition(all 0.2s ease-in-out);
+}

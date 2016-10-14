@@ -1,3 +1,148 @@
-code {
-	color: red;
+html,
+body {
+	// width: 100%;
+	// height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper {
+	// width: 100%;
+	// height: 100%;
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-image: image-url("background.jpg");
+	overflow: hidden;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9;
+		background-color: $balboa-blue;
+		opacity: 0.5;
+	}
+	@include clearfix;
+	.form-wrapper {
+		z-index: 9999;
+		position: relative;
+		// height: 100%;
+		padding-top: 60px;
+		@include outer-container;
+		.form {
+			
+			position: relative;
+			display: block;
+			color: tint($balboa-blue, 15%);
+
+			h1,
+			h2 {
+				text-align: center;
+				font-weight: 400;
+			}
+
+			h1 {
+				font-size: 2em;
+				line-height: 1.5;
+				margin: 0;
+			}
+			h2 {
+				font-size: 1em;
+				margin-bottom: 25px;
+			}
+			background-color: #fff;
+			@include span-columns(5);
+			@include shift(1);
+			@include pad(25px);
+
+			// top: 50%;
+			// transform: translateY(-50%);
+
+			// forms
+
+			input,
+			textarea {
+				border-radius: 0px;
+				border: 1px solid tint($balboa-blue, 25%);
+			}
+			label {
+				display: none;
+			}
+
+			.btn {
+				width: 100%;
+				background-color: tint($balboa-blue,25%);
+				color: #fff;
+				@extend .transition;
+				&:hover {
+					background-color: shade($balboa-blue, 25%);
+				}
+			}
+		}
+	}
+}
+.hidden {
+	display: none;
+}
+
+.cta {
+	line-height: 120px;
+	color: #fff;
+	font-size: 2em;
+	font-weight: 100;
+	letter-spacing: 1px;
+	text-align: center;
+	@include span-columns(12 of 12);
+	a {
+		color: #fff;
+		border-bottom: 2px solid #fff;
+		@extend .transition;
+		&:hover {
+			color: tint($balboa-blue, 55%);
+			border-bottom: 2px solid tint($balboa-blue, 55%);
+		}
+	}
+}
+
+.footer {
+	@include pad(25px);
+	@include outer-container;
+	@include clearfix;
+	// border: 1px solid red;
+	color: tint($balboa-blue, 50%);
+	// @include omega(1n);
+
+	#logo {
+		height: 60px;
+		background-image: image-url('balboa-logo.svg');
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		@include span-columns(4);
+		@include hide-text;
+		@include shift(4);
+	}
+	.licensing {
+		text-align: center;
+		@include span-columns(10);
+		@include shift(1);
+		@include clearfix;
+		li {
+			// float: left;
+			display: inline-block;
+			padding: 10px;
+		}
+	}
+	.address,
+	.phone {
+		color: tint($balboa-blue, 50%);
+		text-decoration: none;
+		text-align: center;
+		@include shift(3);
+		@include span-columns(6);
+	}
 }

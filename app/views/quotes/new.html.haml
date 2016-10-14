@@ -1,0 +1,45 @@
+.wrapper
+	.form-wrapper
+		.form	
+			%h1.header
+				Quick Quote
+			%h2.sub-header
+				Home Coverage
+			= form_for @quote do |f|
+				= f.label :name
+				= f.text_field :name, placeholder: 'Name', required: true
+
+				= f.label :email
+				= f.email_field :email, placeholder: 'Email', required: true
+
+				= f.label :message
+				= f.text_area :message, as: :text
+
+				.hidden
+					= f.label :nickname
+					= f.text_field :nickname, hint: 'leave blank'
+
+				= f.submit 'Get Quote', class: 'btn'
+		.cta
+			=link_to "Learn More", "http://balboapacific.com"
+			about Balboa Pacific Insurance.
+
+.footer
+	=link_to "Balboa Pacific", "http://balboapacific.com", id: 'logo'
+	%ul.licensing
+		%li
+			Licensing: 
+		%li
+			AZ - 1089975 
+		%li
+			CA - 10I96581 
+		%li
+			CO - 460681 
+		%li
+			FL - W216194 
+		%li
+			OR - 100265964 
+		%li
+			TX - 2020888
+	=link_to "450 Newport Center Drive Suite 200 Newport Beach, CA 92660", "https://goo.gl/maps/5z9nAgy5ZHJ2", class: "address"
+	=link_to "(888) 722-6411", "tel:888.722.6411", class: "phone"
