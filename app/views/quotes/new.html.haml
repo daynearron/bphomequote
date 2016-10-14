@@ -1,22 +1,21 @@
 .wrapper
 	.form-wrapper
 		.form	
-			%h1.header
-				Quick Quote
+			=link_to "Balboa Pacific", "http://balboapacific.com", class: 'logo'
 			%h2.sub-header
-				Home Coverage
+				Home Coverage Quick Quote
 			= form_for @quote do |f|
 				= f.label :name
-				= f.text_field :name, placeholder: 'Name', required: true, class: "name"
+				= f.text_field :name, placeholder: 'Name of Insured', required: true, class: "name"
 				
 				= f.label :dob
 				= f.text_field :dob, placeholder: 'Date of Birth', required: true, class: "dob"
 
 				= f.label :phone
-				= f.text_field :phone, placeholder: 'Phone', required: true
+				= f.text_field :phone, placeholder: 'Phone', required: true, class: "phone"
 
 				= f.label :email
-				= f.email_field :email, placeholder: 'Email', required: true
+				= f.email_field :email, placeholder: 'Email', required: true, class: "email"
 
 				= field_set_tag do
 					
@@ -35,14 +34,7 @@
 					= f.text_field :zip, placeholder: 'Zip Code', required: true, class: 'address-small zip'
 
 					= f.label :property
-					= f.text_field :property, placeholder: 'Property Type', required: true
-
-				= field_set_tag do
-					
-					=field_set_tag 'Let Us Know!'
-
-					= f.label :message
-					= f.text_area :message, as: :text, placeholder: 'How did you hear about us?'
+					= f.select :property, options_for_property,{:include_blank => 'Property Type'}, required: true
 
 				.hidden
 					= f.label :nickname
@@ -54,7 +46,6 @@
 			about Balboa Pacific Insurance.
 
 .footer
-	=link_to "Balboa Pacific", "http://balboapacific.com", id: 'logo'
 	%ul.licensing
 		%li
 			Licensing: 

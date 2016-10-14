@@ -4,7 +4,21 @@ body {
 	// height: 100%;
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+	height: 60px;
+	margin-bottom: 25px;
+	background-image: image-url('balboa-logo.svg');
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 100%;
+	display: block;
+	// @include span-columns(4);
+	@include hide-text;
+	// @include shift(4);
 }
 
 .wrapper {
@@ -35,14 +49,16 @@ body {
 		padding-top: 60px;
 		@include outer-container;
 		.form {
-			
+			-webkit-box-shadow: 2px 2px 23px -4px rgba(0,0,0,0.14);
+			-moz-box-shadow: 2px 2px 23px -4px rgba(0,0,0,0.14);
+			box-shadow: 2px 2px 23px -4px rgba(0,0,0,0.14);
 			position: relative;
 			display: block;
 			color: tint($balboa-blue, 15%);
 
 			h1,
 			h2 {
-				color: #608e95;
+				color: #6d9ba1;
 				text-align: center;
 				font-weight: 400;
 			}
@@ -67,22 +83,34 @@ body {
 			// forms
 
 			input,
-			textarea {
+			textarea,
+			select {
 				border-radius: 0px;
 				border: 1px solid tint($balboa-blue, 45%);
 				font-size: 11px;
+			}
+			select {
+				color: #96979a;
+				// line-height: 1.2;
+				-webkit-appearance: none;
+				-webkit-border-radius: 0px;
+				padding: 0px 10px;
+				height: 30px;
+				width: 100%;
+				// padding: 10px;
 			}
 			label {
 				display: none;
 			}
 
 			.btn {
+				margin-top: 25px;
 				width: 100%;
-				background-color: tint($balboa-blue,25%);
+				background-color: #0d516a;
 				color: #fff;
 				@extend .transition;
 				&:hover {
-					background-color: shade($balboa-blue, 25%);
+					background-color: shade(#0d516a, 25%);
 				}
 			}
 		}
@@ -119,16 +147,6 @@ body {
 	color: tint($balboa-blue, 50%);
 	// @include omega(1n);
 
-	#logo {
-		height: 60px;
-		background-image: image-url('balboa-logo.svg');
-		background-size: contain;
-		background-position: center center;
-		background-repeat: no-repeat;
-		@include span-columns(4);
-		@include hide-text;
-		@include shift(4);
-	}
 	.licensing {
 		text-align: center;
 		@include span-columns(10);
@@ -150,27 +168,34 @@ body {
 	}
 }
 
-.address-small,
-.name,
-.dob {
+input {
 	float: left;
 }
 
 input.name {
-width: 75%;
-margin-right: 5%;
+width: 78%;
+margin-right: 2%;
 }
 input.dob {
 	width: 20%;
 }
+
+input.phone {
+	width: 43%;
+	margin-right: 2%;
+}
+
+input.email {
+	width: 55%;
+}
 input.city{
-	
-width: 35%;
-margin-right: 5%;
+
+width: 38%;
+margin-right: 2%;
 }
 input.state {
-width: 25%;
-margin-right: 5%
+width: 28%;
+margin-right: 2%
 }
 
 input.zip {
@@ -179,4 +204,11 @@ input.zip {
 
 .thank-you {
 	padding-top: 150px;
+}
+
+legend {
+	font-weight: 400;
+	font-size: 11px;
+	padding: 15px 0 0 0;
+	color: #96979a;
 }
