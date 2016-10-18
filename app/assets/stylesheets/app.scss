@@ -168,8 +168,13 @@ body {
 	}
 }
 
-input {
+input,
+fieldset {
 	float: left;
+}
+
+fieldset {
+	@include clearfix;
 }
 
 input.name {
@@ -211,4 +216,9 @@ legend {
 	font-size: 11px;
 	padding: 15px 0 0 0;
 	color: #96979a;
+}
+
+.new_quote {
+	// border: 1px solid red;
+	@include clearfix;
 }

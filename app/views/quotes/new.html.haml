@@ -16,10 +16,8 @@
 
 				= f.label :email
 				= f.email_field :email, placeholder: 'Email', required: true, class: "email"
-
-				= field_set_tag do
 					
-					=field_set_tag 'Property Address'
+				=field_set_tag 'Property Address' do
 
 					= f.label :address
 					= f.text_field :address, placeholder: 'Street Address', required: true
