@@ -60,7 +60,7 @@ body {
 			h2 {
 				color: #6d9ba1;
 				text-align: center;
-				font-weight: 400;
+				font-weight: 100;
 			}
 
 			h1 {
@@ -144,7 +144,9 @@ body {
 	@include outer-container;
 	@include clearfix;
 	// border: 1px solid red;
-	color: tint($balboa-blue, 50%);
+	color: #618e93;
+	font-size: 14px;
+	font-weight: 100;
 	// @include omega(1n);
 
 	.licensing {
@@ -155,12 +157,12 @@ body {
 		li {
 			// float: left;
 			display: inline-block;
-			padding: 10px;
+			padding: 5px;
 		}
 	}
 	.address,
 	.phone {
-		color: tint($balboa-blue, 50%);
+		color: #618e93;
 		text-decoration: none;
 		text-align: center;
 		@include shift(3);
