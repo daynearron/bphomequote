@@ -52,7 +52,7 @@ body {
 		z-index: 9999;
 		position: relative;
 		// height: 100%;
-		padding-top: 60px;
+		padding-top: 80px;
 		@include outer-container;
 		.form {
 			-webkit-box-shadow: 2px 2px 23px -4px rgba(0,0,0,0.14);
@@ -110,6 +110,7 @@ body {
 				// height: 30px;
 				width: 100%;
 				// padding: 10px;
+				margin: 0;
 			}
 			label {
 				display: none;
@@ -240,4 +241,30 @@ legend {
 .new_quote {
 	// border: 1px solid red;
 	@include clearfix;
+}
+
+.add_new_insured {
+	// border: 1px solid red;
+	float: left;
+	padding-bottom: 15px;
+	@include clearfix;
+	legend {
+		padding-top: 0;
+		margin-top: 0;
+	}
+}
+#addUsrLabel {
+	display: block !important;
+	// bordeR: 1px solid red;
+	float: left;
+	margin: 0;
+	@extend legend;
+}
+
+#quote_new_usr{
+	display: none;
+}
+
+.add_new_insured_trigger {
+	padding: 15px 0px;
 }

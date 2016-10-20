@@ -7,7 +7,7 @@
 				Home Coverage
 			= form_for @quote do |f|
 				= f.label :name
-				= f.text_field :name, placeholder: 'Name of Insured', required: true, class: "name"
+				= f.text_field :name, placeholder: 'Full Name of Insured', required: true, class: "name"
 				
 				= f.label :dob
 				= f.text_field :dob, placeholder: 'Date of Birth', required: true, class: "dob"
@@ -35,6 +35,23 @@
 					= f.label :property
 					= f.select :property, options_for_property,{:include_blank => 'Property Type'}, required: true
 
+				= f.check_box :new_usr, :id => "quote_new_usr"
+				= f.label :new_usr, :id => "addUsrLabel" do
+					.add_new_insured_trigger
+						%span#indicator
+							+ Add
+						Additional Insured
+				.add_new_insured.hidden
+					=field_set_tag 'Additional Insured' do
+
+						= f.label :additional_insured_name
+						= f.text_field :additional_insured_name, placeholder: 'Full Name of Insured', class: "name"
+
+						= f.label :additional_insured_dob
+						= f.text_field :additional_insured_name, placeholder: 'Date of Birth', class: "dob"
+						
+						= f.label :additional_insured_phone
+						= f.text_field :additional_insured_name, placeholder: 'Phone'
 				.hidden
 					= f.label :nickname
 					= f.text_field :nickname, hint: 'leave blank'

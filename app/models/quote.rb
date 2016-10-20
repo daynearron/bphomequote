@@ -7,7 +7,12 @@ class Quote < MailForm::Base
   attribute :city,      :validate => true
   attribute :state,     :validate => true
   attribute :zip,       :validate => true
-  attribute :property,   :validate => true
+  attribute :property,  :validate => true
+  attribute :new_usr,   :allow_blank => true
+  attribute :additional_insured_name,   :allow_blank => true
+  attribute :additional_insured_dob,   :allow_blank => true
+  attribute :additional_insured_phone,   :allow_blank => true
+
   attribute :nickname,  :captcha  => true
 
   # Declare the e-mail headers. It accepts anything the mail method
