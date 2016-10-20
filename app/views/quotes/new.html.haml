@@ -1,9 +1,10 @@
 .wrapper
 	.form-wrapper
 		.form	
-			=link_to "Balboa Pacific", "http://balboapacific.com", class: 'logo'
+			%h1
+				Quick Quote
 			%h2.sub-header
-				Home Coverage Quick Quote
+				Home Coverage
 			= form_for @quote do |f|
 				= f.label :name
 				= f.text_field :name, placeholder: 'Name of Insured', required: true, class: "name"
@@ -39,11 +40,12 @@
 					= f.text_field :nickname, hint: 'leave blank'
 
 				= f.submit 'Get Quote', class: 'btn'
-		.cta
+		%p.cta
 			=link_to "Learn More", "http://balboapacific.com"
 			about Balboa Pacific Insurance.
 
 .footer
+	=link_to "Balboa Pacific", "http://balboapacific.com", class: 'logo'
 	%ul.licensing
 		%li
 			Licensing: 
