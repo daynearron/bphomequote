@@ -1,5 +1,5 @@
 module QuotesHelper
 	def options_for_property
-	  ['O/O', '2nd Home', 'N/O/O']
+	  ['Owner Occupied', '2nd Home', 'Non-Owner Occupied']
 	end
 end
