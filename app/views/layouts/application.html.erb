@@ -10,6 +10,11 @@
 <body>
 
 <%= yield %>
-
+<script>
+  $(function() {
+	  $(".phone").inputmask("(999) 999-999");
+	  $(".dob").inputmask("99/99/99");
+  });
+</script>
 </body>
 </html>
