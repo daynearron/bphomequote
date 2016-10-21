@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= inputmask
+//= jquery.inputmask
+//= inputmask.extensions
 //= require app
 //= require_tree .
