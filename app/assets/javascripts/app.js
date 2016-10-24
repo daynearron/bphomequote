@@ -12,5 +12,8 @@ $(function() {
       $(".add_new_insured").addClass("hidden");
     }
   });
+
+  $('.dob').mask('00/00/00');
+  $('.phone').mask('000-000-0000');
 });
 
