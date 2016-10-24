@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= inputmask
-//= jquery.inputmask
-//= inputmask.extensions
+//= jquery.mask
 //= require app
 //= require_tree .

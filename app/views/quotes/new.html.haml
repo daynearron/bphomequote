@@ -13,7 +13,7 @@
 				= f.text_field :dob, placeholder: 'DOB', required: true, class: "dob"
 
 				= f.label :phone
-				= f.text_field :phone, placeholder: 'Phone', required: true, class: "phone"
+				= f.text_field :phone, placeholder: 'Phone', required: true, input_html: { 'input-mask': '000-000-0000' },class: "phone"
 
 				= f.label :email
 				= f.email_field :email, placeholder: 'Email', required: true, class: "email"
@@ -80,3 +80,9 @@
 			TX - 2020888
 	=link_to "450 Newport Center Drive Suite 200 Newport Beach, CA 92660", "https://goo.gl/maps/5z9nAgy5ZHJ2", class: "address"
 	=link_to "(888) 722-6411", "tel:888.722.6411", class: "phone"
+
+:javascript
+	$(function() {
+		$('.dob').mask('00/00/00');
+		$('.phone').mask('000-000-0000');
+	});
