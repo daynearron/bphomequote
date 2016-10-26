@@ -1,4 +1,5 @@
 class Quote < MailForm::Base
+  attribute :type,      :validate => true
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :dob,       :validate => true
@@ -8,6 +9,7 @@ class Quote < MailForm::Base
   attribute :state,     :validate => true
   attribute :zip,       :validate => true
   attribute :property,  :validate => true
+  attribute :referer,  :validate => true
   attribute :new_usr,   :allow_blank => true
   attribute :additional_insured_name,   :allow_blank => true
   attribute :additional_insured_dob,   :allow_blank => true
@@ -20,7 +22,7 @@ class Quote < MailForm::Base
   def headers
     {
       :subject => "Quote Request",
-      :to => "joe@balboapacific.com",
+      :to => "design@daynearron.com",
       :from => %("#{name}" <#{email}>)
     }
   end

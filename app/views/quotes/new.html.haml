@@ -6,6 +6,7 @@
 			%h2.sub-header
 				Home Coverage
 			= form_for @quote do |f|
+
 				= f.label :name
 				= f.text_field :name, placeholder: 'Full Name of Insured', required: true, class: "name"
 				
@@ -32,8 +33,11 @@
 					= f.label :zip
 					= f.text_field :zip, placeholder: 'Zip Code', required: true, class: 'address-small zip'
 
+					= f.label :type
+					= f.select :type, options_for_type,{:include_blank => 'Transaction Type'}, required: true, class: 'transaction-type'
+
 					= f.label :property
-					= f.select :property, options_for_property,{:include_blank => 'Property Type'}, required: true
+					= f.select :property, options_for_property,{:include_blank => 'Property Type'}, required: true, class: 'property-type'
 
 				= f.check_box :new_usr, :id => "quote_new_usr"
 				= f.label :new_usr, :id => "addUsrLabel" do
@@ -55,6 +59,10 @@
 				.hidden
 					= f.label :nickname
 					= f.text_field :nickname, hint: 'leave blank'
+				
+
+				=f.text_field :referer, placeholder: 'How did you hear about us?'
+
 
 				= f.submit 'Get Quote', class: 'btn'
 		%p.cta
