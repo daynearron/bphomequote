@@ -22,7 +22,7 @@ class Quote < MailForm::Base
   def headers
     {
       :subject => "Quote Request",
-      :to => "design@daynearron.com",
+      :to => "joe@balboapacific.com",
       :from => %("#{name}" <#{email}>)
     }
   end
